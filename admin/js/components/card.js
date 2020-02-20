@@ -30,7 +30,7 @@ CMS.registerEditorComponent({
 
       return {
         text: getAttribute("title", false),
-        href: getAttribute("image", false)
+        href: getAttribute("image", false),
         href: getAttribute("body", false)
       };
     },
