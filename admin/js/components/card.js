@@ -28,10 +28,12 @@ CMS.registerEditorComponent({
         return val ? val[1] : defaultValue;
       }
 
+      var raw = getAttribute("body", '');
+
       return {
         title: getAttribute("title", false),
         image: getAttribute("image", false),
-        body: getAttribute("body", false).replace(/\\n/g, "\n")
+        body: (raw) ? raw.replace(/\\n/g, "\n") : false
       };
     },
 
