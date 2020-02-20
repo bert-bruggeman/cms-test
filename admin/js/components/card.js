@@ -31,7 +31,7 @@ CMS.registerEditorComponent({
       return {
         title: getAttribute("title", false),
         image: getAttribute("image", false),
-        body: getAttribute("body", false).replace("\\n", "\n")
+        body: getAttribute("body", false).replace(/\\n/g, "\n")
       };
     },
 
@@ -39,7 +39,7 @@ CMS.registerEditorComponent({
     toBlock: function(obj) {
       if (obj.image || obj.body) {
       console.log(obj.body.replace("\n", "\\n"));
-        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body.replace("\n", "\\n") + '" }}';
+        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body.replace(/\n/g, "\\n") + '" }}';
       }
     },
 
