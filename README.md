@@ -5,4 +5,4 @@ title: Readme
 
 a test
 
-{{ card title="Test" body="test **kaart**\n\n*lee nqsodqs jjdqsds*"" }}
+{{ card image="/media/ytkohk53tyr21.jpg" title="Test" body="test **kaart**\n\n*lee nqsodqs jjdqsds*"" }}
