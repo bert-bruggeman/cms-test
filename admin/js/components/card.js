@@ -39,7 +39,7 @@ CMS.registerEditorComponent({
     toBlock: function(obj) {
       if (obj.image || obj.body) {
       console.log(obj.body.toString());
-        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body.toString() + '" }}';
+        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body + '" }}';
       }
     },
 
