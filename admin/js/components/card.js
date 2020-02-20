@@ -49,7 +49,7 @@ CMS.registerEditorComponent({
     toPreview: function(obj) {
       if (obj.image || obj.body) {
         var title = (obj.title) ? '<h3>' + obj.title + '</h3>' : '';   
-        var image = (obj.image) ? '<img src="' + obj.image + '"/>' : '';
+        var image = (obj.image) ? '<img width=400 height=300 src="' + obj.image + '"/>' : '';
         var body = (obj.body) ? Markdown.render(obj.body) : '';
         return ('<article class="card">' + image + title +body + '</article>');
       }
