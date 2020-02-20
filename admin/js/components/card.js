@@ -40,7 +40,7 @@ CMS.registerEditorComponent({
       if (obj.image || obj.body) {
         var title = (obj.title) ? ' title="' + obj.title + '"' : '';
         var image = (obj.image) ? ' image="' + obj.image + '"' : '';
-        var body = (obj.body) ? ' body="' + obj.body + '"' : '';
+        var body = (obj.body) ? ' body="' + obj.body.replace(/\n/g, "\\n") + '"' : '';
         return '{{ card' + image + title + body + '" }}';
       }
     },
@@ -48,10 +48,10 @@ CMS.registerEditorComponent({
 
     toPreview: function(obj) {
       if (obj.image || obj.body) {
-        var title = (obj.title) ? h('h3', {}, obj.title) : '';
-        var image = (obj.image) ? h('img', {src: obj.image}) : '';
-        var body = (obj.body) ? h('div', {}, Markdown.render(obj.body)) : '';
-        return h('article', {className: 'card'}, image, title, body);
+        var title = (obj.title) ? '<h3>' + obj.title + '</h3>' : '';   
+        var image = (obj.image) ? '<img src="' + obj.image + '"/>' : '';
+        var body = (obj.body) ? Markdown.render(obj.body) : '';
+        return ('<article class="card">' + image + title +body + '</article>');
       }
     }
 
