@@ -31,7 +31,7 @@ CMS.registerEditorComponent({
       return {
         title: getAttribute("title", false),
         image: getAttribute("image", false),
-        body: getAttribute("body", false).replace("\\n", "\n");
+        body: getAttribute("body", false).replace("\\n", "\n")
       };
     },
 
