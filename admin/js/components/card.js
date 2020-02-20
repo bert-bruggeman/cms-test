@@ -5,7 +5,7 @@ CMS.registerEditorComponent({
     fields: [
       {
         name: 'title',
-        label: 'Tekst',
+        label: 'Title',
         widget: 'string'
       },
       {
@@ -38,6 +38,7 @@ CMS.registerEditorComponent({
 
     toBlock: function(obj) {
       if (obj.text && obj.href) {
+      console.log(obj.body);
         return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body + '" }}';
       }
     },
