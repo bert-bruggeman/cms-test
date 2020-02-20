@@ -38,8 +38,10 @@ CMS.registerEditorComponent({
 
     toBlock: function(obj) {
       if (obj.image || obj.body) {
-      console.log(obj.body.replace(/\n/g, "\\n"));
-        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body.replace(/\n/g, "\\n") + '" }}';
+        var title = (obj.title) ? ' title="' + obj.title + '"' : '';
+        var image = (obj.image) ? ' image="' + obj.image + '"' : '';
+        var body = (obj.body) ? ' body="' + obj.body + '"' : '';
+        return '{{ card' + image + title + body + '" }}';
       }
     },
 
