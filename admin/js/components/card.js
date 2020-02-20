@@ -48,9 +48,17 @@ CMS.registerEditorComponent({
       if (obj.image || obj.body) {
         var title = (obj.title) ? h('h3', {}, obj.title) : '';
         var image = (obj.image) ? h('img', {src: obj.image}) : '';
-        var body = (obj.body) ? h('div', {}, obj.body) : '';
+        var body = (obj.body) ? h('div', {}, Markdown.render(obj.body)) : '';
         return h('article', {className: 'card'}, image, title, body);
       }
     }
 
 });
+
+
+var markdownString = function(str) {
+  
+  
+  
+  
+}
