@@ -29,17 +29,17 @@ CMS.registerEditorComponent({
       }
 
       return {
-        text: getAttribute("title", false),
-        href: getAttribute("image", false),
-        href: getAttribute("body", false)
+        title: getAttribute("title", false),
+        image: getAttribute("image", false),
+        body: getAttribute("body", false)
       };
     },
 
 
     toBlock: function(obj) {
       if (obj.image || obj.body) {
-      console.log(obj.body);
-        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body + '" }}';
+      console.log(obj.body.toString());
+        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body.toString() + '" }}';
       }
     },
 
@@ -50,7 +50,7 @@ CMS.registerEditorComponent({
         var image = (obj.image) ? h('img', {src: obj.image}) : '';
         var body = (obj.body) ? h('div', {}, obj.body) : '';
       
-        return h('article', {className: 'card'}, image, title, body);
+        return h('article', {className: 'card'}, image, title, body.toString());
       }
     }
 
