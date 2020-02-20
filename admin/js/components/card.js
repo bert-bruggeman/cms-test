@@ -31,15 +31,15 @@ CMS.registerEditorComponent({
       return {
         title: getAttribute("title", false),
         image: getAttribute("image", false),
-        body: getAttribute("body", false)
+        body: getAttribute("body", false).replace("\\n", "\n");
       };
     },
 
 
     toBlock: function(obj) {
       if (obj.image || obj.body) {
-      console.log(obj.body.toString());
-        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body + '" }}';
+      console.log(obj.body.replace("\n", "\\n"));
+        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body.replace("\n", "\\n") + '" }}';
       }
     },
 
