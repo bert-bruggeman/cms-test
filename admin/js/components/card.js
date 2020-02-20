@@ -41,7 +41,7 @@ CMS.registerEditorComponent({
         var title = (obj.title) ? ' title="' + obj.title + '"' : '';
         var image = (obj.image) ? ' image="' + obj.image + '"' : '';
         var body = (obj.body) ? ' body="' + obj.body.replace(/\n/g, "\\n") + '"' : '';
-        return '{{ card' + image + title + body + '" }}';
+        return '{{ card' + image + title + body + ' }}';
       }
     },
 
