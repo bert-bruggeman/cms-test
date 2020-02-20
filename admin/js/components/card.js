@@ -38,7 +38,7 @@ CMS.registerEditorComponent({
 
     toBlock: function(obj) {
       if (obj.image || obj.body) {
-      console.log(obj.body.replace("\n", "\\n"));
+      console.log(obj.body.replace(/\n/g, "\\n"));
         return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body.replace(/\n/g, "\\n") + '" }}';
       }
     },
@@ -49,7 +49,7 @@ CMS.registerEditorComponent({
         var title = (obj.title) ? h('h3', {}, obj.title) : '';
         var image = (obj.image) ? h('img', {src: obj.image}) : '';
         var body = (obj.body) ? h('div', {}, obj.body) : '';
-      
+      console.log(obj.body)
         return h('article', {className: 'card'}, image, title, body.toString());
       }
     }
