@@ -49,8 +49,7 @@ CMS.registerEditorComponent({
         var title = (obj.title) ? h('h3', {}, obj.title) : '';
         var image = (obj.image) ? h('img', {src: obj.image}) : '';
         var body = (obj.body) ? h('div', {}, obj.body) : '';
-      console.log(obj.body)
-        return h('article', {className: 'card'}, image, title, body.toString());
+        return h('article', {className: 'card'}, image, title, body);
       }
     }
 
