@@ -1,0 +1,30 @@
+html {
+  scroll-behavior: initial !important;
+}
+
+.caption,
+img {
+  opacity: 1 !important;
+  animation-name: none !important;
+  animation-duration: 0s !important;
+}
+
+.preview {
+  border: 1px dashed grey;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.thumbnail {
+  margin-bottom: .25rem !important;
+}
+
+
+.preview-body-container > div > div {
+  display: inline;
+}
+
+.overview-preview {
+  margin-top: 3rem;
+}
+
