@@ -37,16 +37,15 @@ CMS.registerEditorComponent({
 
 
     toBlock: function(obj) {
-      if (obj.text && obj.href) {
+      if (obj.image || obj.body) {
       console.log(obj.body);
-        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="rrrr" }}';
+        return '{{ card title="' + obj.title + '" image="' + obj.image + '" body="' + obj.body + '" }}';
       }
     },
 
 
     toPreview: function(obj) {
-      if (obj.text && obj.href) {
-        console.log(obj.body)
+      if (obj.image || obj.body) {
         var title = (obj.title) ? h('h3', {}, obj.title) : '';
         var image = (obj.image) ? h('img', {src: obj.image}) : '';
         var body = (obj.body) ? h('div', {}, obj.body) : '';
