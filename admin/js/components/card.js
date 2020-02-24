@@ -33,7 +33,7 @@ CMS.registerEditorComponent({
       return {
         title: getAttribute("title", false),
         image: getAttribute("image", false),
-        body: (raw) ? raw.replace(/\\n/g, "\n") : false
+        body: (raw) ? markdownUnEscapeString(raw) : false
       };
     },
 
@@ -42,7 +42,7 @@ CMS.registerEditorComponent({
       if (obj.image || obj.body) {
         var title = (obj.title) ? ' title="' + obj.title + '"' : '';
         var image = (obj.image) ? ' image="' + obj.image + '"' : '';
-        var body = (obj.body) ? ' body="' + obj.body.replace(/\n/g, "\\n") + '"' : '';
+        var body = (obj.body) ? ' body="' + markdownEscapeString(obj.body) + '"' : '';
         return '{{ card' + image + title + body + ' }}';
       }
     },
@@ -60,9 +60,11 @@ CMS.registerEditorComponent({
 });
 
 
-var markdownString = function(str) {
-  
-  
-  
-  
+var markdownEscapeString = function(str) {
+  return str.replace(/\n/g, /\\n/).replace(/\"/g, /\\"/).replace(/\'/g, /\\'/);
 }
+
+var markdownUnEscapeString = function(str) {
+  return str.replace(/\\n/g, /\n/).replace(/\\"/g, /\"/).replace(/\\'/g, /\'/);
+}
+
