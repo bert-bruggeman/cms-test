@@ -5,7 +5,7 @@
     var honeypot;
 
     var fields = Object.keys(elements).filter(function(k) {
-      if (elements[k].name === "honeypot") {
+      if (elements[k].name === "gotcha") {
         honeypot = elements[k].value;
         return false;
       }
@@ -70,11 +70,7 @@
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           form.reset();
-          var formElements = form.querySelector(".form-elements")
-          if (formElements) {
-            formElements.style.display = "none"; // hide form
-          }
-          var thankYouMessage = form.querySelector(".thankyou_message");
+          var thankYouMessage = form.querySelector(".success");
           if (thankYouMessage) {
             thankYouMessage.style.display = "block";
           }
@@ -89,7 +85,7 @@
   
   function loaded() {
     // bind to the submit event of our form
-    var forms = document.querySelectorAll("form.gform");
+    var forms = document.querySelectorAll(".form");
     for (var i = 0; i < forms.length; i++) {
       forms[i].addEventListener("submit", handleFormSubmit, false);
     }

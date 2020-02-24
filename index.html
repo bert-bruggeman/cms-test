@@ -7,38 +7,37 @@
   <title>test: learn-to-send-email-via-google-script-html-no-server</title>
   <meta name="description" content="Test all HTML form and input elements for learn-to-send-email-via-google-script-html-no-server." />
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
-  <form class="gform pure-form pure-form-stacked" method="POST" action="https://script.google.com/macros/s/AKfycbxJ3fS2QnX7QDA6vFqZSn9YejWHu9F-3xm0MH9LXyUFoG6xP5o/exec">
+  <form class="form" method="POST" action="https://script.google.com/macros/s/AKfycbxJ3fS2QnX7QDA6vFqZSn9YejWHu9F-3xm0MH9LXyUFoG6xP5o/exec">
 
-    <div style="display:none" class="thankyou_message">
-     <h2><em>Thanks</em> for contacting us! We will get back to you soon!
-     </h2>
+    <div style="display:none" class="message success">
+     <p>Bedankt voor uw inzending</p>
     </div>
 
-    <div class="form-elements">
-
-      <fieldset class="pure-group">
-        <label for="text">Naam: </label>
-        <input id="text" name="naam" value="Bert B" />
-      </fieldset>
-
-      <fieldset class="pure-group">
-        <label for="text-area">bericht: </label>
-        <textarea id="text-area" name="bericht" rows="10">Testbericht</textarea>
-      </fieldset>
-
-      <fieldset class="pure-group">
-        <label for="email">Email: </label>
-        <input id="email" name="email" type="email" required value="bert.bruggeman@gmail.com" />
-      </fieldset>
-      
-      <button class="button-success pure-button button-xlarge">Versturen</button>
-      
+    <div class="form-item hidden">
+      <label for="gotcha">First name: </label>
+      <input id="gotcha" name="gotcha"/>
     </div>
+
+    <div class="form-item">
+      <label for="text">Naam: </label>
+      <input id="text" name="naam" value="Bert B" />
+    </div>
+
+    <div class="form-item">
+      <label for="text-area">bericht: </label>
+      <textarea id="text-area" name="bericht" rows="10">Testbericht</textarea>
+    </div>
+
+    <div class="form-item">
+      <label for="email">Email: </label>
+      <input id="email" name="email" type="email" required value="bert.bruggeman@gmail.com" />
+    </div>
+    
+    <button class="button">Versturen</button>
 
   </form>
   <script data-cfasync="false" type="text/javascript" src="/js/form-submission-handler.js"></script>

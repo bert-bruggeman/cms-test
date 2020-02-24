@@ -1,0 +1,139 @@
+html {
+ overflow:hidden scroll;
+ height:100%;
+ font-size:16px
+}
+body {
+ display:-webkit-box;
+ display:flex;
+ -webkit-box-orient:vertical;
+ -webkit-box-direction:normal;
+ font-family:Roboto,sans-serif;
+ color:#333;
+ margin:0;
+ line-height:1.75;
+ flex-direction:column;
+ min-height:100%
+}
+a {
+ color:currentcolor;
+ text-decoration:none
+}
+img {
+ height:auto;
+ -o-object-fit:contain;
+ object-fit:contain;
+ width:100%;
+ display:block
+}
+.anim,
+img {
+ opacity:0
+}
+.hidden,
+.no-anim,
+.toggle {
+ visibility:hidden
+}
+.hidden,
+.toggle {
+ opacity:0;
+ position:fixed;
+ z-index:-9
+}
+.flex {
+ display:-webkit-box;
+ display:flex;
+ flex-wrap:wrap
+}
+.flex-center {
+ -webkit-box-align:center;
+ align-items:center;
+ -webkit-box-pack:center;
+ justify-content:center
+}
+.symbol {
+ height:1rem;
+ width:1rem;
+ color:inherit
+}
+.symbol-small {
+ width:.75rem;
+ height:.75rem
+}
+.symbol-hamburger {
+ height:1.25rem;
+ width:1.25rem
+}
+.menu {
+ list-style:none;
+ padding:0;
+ margin:0;
+ line-height:1
+}
+.menu-main,
+.submenu {
+ display:none
+}
+.nav-main {
+ font-family:"Noto serif";
+ font-size:.75rem;
+ letter-spacing:.125rem;
+ font-weight:700;
+ text-transform:uppercase;
+ position:-webkit-sticky;
+ position:sticky;
+ top:0;
+ height:5rem;
+ padding-right:2rem;
+ -webkit-box-pack:justify;
+ justify-content:space-between;
+ z-index:1;
+ bottom:auto
+}
+.menu-social-item {
+ margin-left:.75rem
+}
+.menu-social-link {
+ color:#916f6f
+}
+.toggle-control-menu-main {
+ z-index:3;
+ height:5rem;
+ width:5rem;
+ background-color:#fff
+}
+.toggle-control-submenu {
+ margin-left:.5rem;
+ -webkit-box-ordinal-group:3;
+ order:2
+}
+@media (min-width:60rem) {
+ .nav-main {
+  padding:2rem 4rem
+ }
+ .menu-main {
+  display:-webkit-box;
+  display:flex;
+  -webkit-box-orient:horizontal;
+  -webkit-box-direction:normal;
+  flex-direction:row
+ }
+ .menu-item {
+  margin-right:2rem
+ }
+ .toggle-control-menu-main {
+  display:none
+ }
+}
+@media (min-width:80rem) {
+ .nav-main {
+  padding:4rem 6rem 2rem
+ }
+}
+@media (min-width:100rem) {
+ html {
+  font-size:18px
+ }
+}
+
